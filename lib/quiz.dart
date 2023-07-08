@@ -17,12 +17,14 @@ class _QuizState extends State<Quiz> {
   @override
   void initState() {
     activeScreen = StartScreen(switchScreen);
+    //activeScreen = 'start-screen';
     super.initState();
   }
 
   void switchScreen() {
     setState(() {
       activeScreen = const QuestionScreen();
+      //activeScreen = 'question-screen';
     });
   }
 
@@ -42,6 +44,9 @@ class _QuizState extends State<Quiz> {
               ),
             ),
             child: activeScreen),
+            //child: activescreen == 'start-screen' 
+            // ? Startscreen(switchscreen)
+            // : questionscreen()   this is the method using ternary and strings
       ),
     );
   }
